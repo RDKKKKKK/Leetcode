@@ -2,8 +2,6 @@ package 堆;
 
 public class 数组第k大元素 {
 
-
-
     /* 堆排序：时间复杂度：建堆O(n) 排序O(logn)
         关于建堆的复杂度：
             如果你计算每层的工作量，你会发现对于大多数节点，它们的高度（相对于树底）实际上是相对较低的
@@ -32,9 +30,11 @@ public class 数组第k大元素 {
         int right = root*2 + 2;
         int largest = root;
 
+        //记录当前三个节点中的largest值
         if (left < size && nums[left] > nums[largest]) largest = left;
         if (right < size && nums[right] > nums[largest]) largest = right;
 
+        //若最大的不在root则换上去
         if (largest != root){
             swap(nums, root, largest);
             maxHeapify(largest, nums, size);

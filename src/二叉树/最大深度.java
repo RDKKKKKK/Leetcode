@@ -1,17 +1,21 @@
 package 二叉树;
 
+/**
+ * 2024.08.25
+ * Max(LeftMax, RightMax)
+ */
+
 
 /*
     可以更简洁如下
+    此外，层序遍历也可以解
  */
 
 public class 最大深度 {
     public int maxDepth(TreeNode root) {
         if (root == null)
             return 0;
-        int leftHeight = maxDepth(root.left);
-        int rightHeight = maxDepth(root.right);
-        return Math.max(leftHeight,rightHeight)+1;
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
     }
 
 

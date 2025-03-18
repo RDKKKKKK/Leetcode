@@ -6,6 +6,16 @@ import java.util.List;
 import java.util.Queue;
 
 public class 右视图 {
+
+    /**
+     * 解决最右侧节点为空：不计算最右侧的count，而关注将每一层的节点全部出队
+     * 通过queue.size()来获取每层的节点数
+     * 一个for循环出一层的所有节点
+     * 最后一个点即为右视图节点，加入答案
+     * @param root
+     * @return
+     */
+
     public List<Integer> rightSideView(TreeNode root){
         Queue<TreeNode> queue = new LinkedList<>();
         List<Integer> res = new ArrayList<>();

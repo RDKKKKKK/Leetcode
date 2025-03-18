@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-//详见题解
+//不是快乐数->无限循环->sum重复出现->hashset
 public class y_p_快乐数 {
 
     //获取每一位的平方和
