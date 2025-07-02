@@ -7,6 +7,27 @@ import java.util.Objects;
 //注意要先判断长度是否一致
 
 public class y_有效的字母异位词 {
+    //数组也是一种简单的哈希表，本体哈希值较集中可直接用数组
+    public boolean isAnagram1(String s, String t) {
+        int[] record = new int[26];
+        int ns = s.length(), nt = t.length();
+        for(int i=0;i<ns;i++){
+            char c = s.charAt(i);
+            record[c-'a']++;
+        }
+
+        for(int i=0;i<nt;i++){
+            char c = t.charAt(i);
+            record[c-'a']--;
+        }
+
+        for(int i=0;i<26;i++){
+            if(record[i]!=0)
+                return false;
+        }
+        return true;
+    }
+
     public boolean isAnagram(String s, String t) {
         Map<Character, Integer> smap=new HashMap<>();
         Map<Character, Integer> tmap=new HashMap<>();

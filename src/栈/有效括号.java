@@ -12,6 +12,7 @@ public class 有效括号 {
         map.put('[', ']');
 
         Stack<Character> stack = new Stack<>();
+
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (map.containsKey(c)) {
