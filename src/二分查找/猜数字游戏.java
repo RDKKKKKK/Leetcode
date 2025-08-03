@@ -9,7 +9,7 @@ public class 猜数字游戏 {
     public int guessNumber(int n) {
         int left = 1, right = n;
 
-        //边界控制：通过定义左右开闭分析该边是否可能是答案（闭可能 开不可能）来确定left </<= right
+        //边界控制：通过定义左右开闭分析该边是否可能是答案（闭可能 开不可能）来确定left </<= right 和 left/right ~ mid
         //         nums[mid] > target mid一定不是答案，右闭 右边界会计入计算 mid-1
         //[left, right] 左闭右闭写法 ：left <= right right = mid -1 left = mid + 1
         //[left, right) 左闭右开写法

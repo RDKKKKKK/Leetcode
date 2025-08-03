@@ -38,6 +38,9 @@ public class 寻找旋转数组中的最小值 {
      *         }
      *
      *         // Use nums[0] to distinguish the segments
+     *         // mid观测点划分整个数组
+     *         // 需要判断哪边有序：通过两边各自的左右端点来判断，
+     *         // 需要判断下一轮搜哪边：目标是否在有序侧
      *         if (nums[0] <= nums[mid]) {
      *             if (nums[0] <= target && target < nums[mid]) {
      *                 right = mid - 1;
