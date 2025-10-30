@@ -1,5 +1,7 @@
 package Learning;
 
+import java.util.HashSet;
+
 public class String_basic {
     public void basicOperation(){
         StringBuilder sb = new StringBuilder();
@@ -10,7 +12,7 @@ public class String_basic {
         String result = sb.toString();
 
         String newStr = result.replace("*", ""); //replace char
-        String subStr = newStr.substring(2, 5);  // 返回从索引 2 到 5 之间的子串
+        String subStr = newStr.substring(2, 5);  // [2, 5)
 
         newStr.equals(result);  // true 或 false
         int resl = newStr.compareTo(result);  // 字典顺序比较，返回负数、0 或正数
@@ -19,7 +21,6 @@ public class String_basic {
         char[] arr = result.toCharArray(); //String和CharArray互转
         arr[0] = 'X';
         String s = new String(arr);
-
 
     }
 }

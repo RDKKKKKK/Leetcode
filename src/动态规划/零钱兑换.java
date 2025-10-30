@@ -14,7 +14,7 @@ public class 零钱兑换 {
 
 
     public int coinChange(int[] coins, int amount) {
-        int max = amount + 1; // 用来表示无效解
+        int max = amount + 1; // 最大可能满足条件的数量为amount，因此可用amount+1表示无效值
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, max); // 初始化为最大值
         dp[0] = 0; // 凑成金额为0需要0个硬币

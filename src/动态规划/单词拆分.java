@@ -5,12 +5,44 @@ import java.util.List;
 import java.util.Set;
 
 public class 单词拆分 {
+
+    /*
+    注意由于状态转移方程中的substring [)的属性
+    导致对以0开头的单词状态需要分别判断- 方程失效
+     */
+
+    public boolean wordBreak(String s, List<String> wordDict) {
+        boolean[] dp = new boolean[s.length()];
+        HashSet<String> set = new HashSet<>();
+
+        for(String word : wordDict){
+            set.add(word);
+        }
+
+        for(int i=0;i<s.length();i++){
+            if(set.contains(s.substring(0,i+1))){
+                dp[i] = true;
+                continue;
+            }
+
+            for(int j=i-1;j>=0;j--){
+                dp[i] = dp[j] && (set.contains(s.substring(j+1,i+1)));
+                if(dp[i]) break;
+            }
+        }
+
+        return dp[s.length()-1];
+
+    }
+
+
+
     /*
     一段字符可能匹配多个单词，原算法匹配一个就确定状态会错过一些也合法的组合
     substring(j,i) 包前不包后，因此 dp[i] 实际表示i之前的单词的状态
      */
 
-    public boolean wordBreak(String s, List<String> wordDict) {
+    public boolean wordBreak2(String s, List<String> wordDict) {
         Set<String> wordDictSet = new HashSet(wordDict);
         boolean[] dp =new boolean[301];
         dp[0] = false;

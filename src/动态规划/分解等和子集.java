@@ -1,5 +1,7 @@
 package 动态规划;
 
+import java.util.Scanner;
+
 public class 分解等和子集 {
 
     /**
@@ -58,5 +60,12 @@ public class 分解等和子集 {
             }
         }
         return dp[n - 1][target];
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()){
+            int n = sc.nextInt();
+        }
     }
 }

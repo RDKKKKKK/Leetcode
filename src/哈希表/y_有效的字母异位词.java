@@ -6,7 +6,8 @@ import java.util.Objects;
 
 //注意要先判断长度是否一致
 
-public class y_有效的字母异位词 {
+public class
+y_有效的字母异位词 {
     //数组也是一种简单的哈希表，本体哈希值较集中可直接用数组
     public boolean isAnagram1(String s, String t) {
         int[] record = new int[26];

@@ -11,7 +11,7 @@ public class 完全平方数 {
         for (int i = 1; i <= n; i++) {
             // 遍历所有可能的平方数来更新dp[i]
             for (int j = 1; j * j <= i; j++) {
-                dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+                dp[i] = Math.min(dp[i], dp[i - j * j] + 1); // + 1 = dp[j*j] 直接满足条件
             }
         }
         return dp[n];

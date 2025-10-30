@@ -12,7 +12,11 @@ public class 最长连续序列 {
         int max = 0;
         for (int num : nums){
             int cur = 1;
+
+            //外层循环 - 遇到n-1在set中即可跳过，避免重复计算
             if (!map.containsKey(num-1)){
+
+                //内层循环 - 数组中每个数只会进入1次，中复杂度O(n
             while (map.containsKey(num+1)){
                 cur++;
                 num++;

@@ -2,7 +2,7 @@ package 二叉树;
 import java.util.HashMap;
 import java.util.Map;
 
-public class 路径综合 {
+public class 路径总和 {
     /**
      * 前缀和：某一节点到一祖先节点的所有结点值的和为唯一值
      * target = (sum) + (target - sum) 即可得到一条满足条件路径
